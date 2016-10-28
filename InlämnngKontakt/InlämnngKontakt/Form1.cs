@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,17 @@ using System.Windows.Forms;
 
 namespace InlämnngKontakt
 {
+    public class SchoolContext : DbContext
+    {
+        public SchoolContext() : base()
+        {
+
+        }
+
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Standard> Standards { get; set; }
+
+    }
     public partial class Form1 : Form
     {
         public Form1()
